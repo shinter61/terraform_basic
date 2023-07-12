@@ -1,8 +1,8 @@
 terraform {
   backend "s3" {
-    bucket = "sre-onboarding-shinta-tfstate"
-    key = "terraform.tfstate"
-    region = "ap-northeast-1"
+    bucket  = "sre-onboarding-shinta-b1-tfstate"
+    key     = "terraform.tfstate"
+    region  = "ap-northeast-1"
     encrypt = true
     profile = "saml"
   }
