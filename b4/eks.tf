@@ -1,13 +1,13 @@
 module "eks" {
-  source = "terraform-aws-modules/eks/aws"
+  source  = "terraform-aws-modules/eks/aws"
   version = "~> 19.0"
 
-  cluster_name = "sre-onboarding-shinta-tf"
+  cluster_name    = "sre-onboarding-shinta-tf"
   cluster_version = "1.27"
 
   enable_irsa = true
-  vpc_id = module.vpc.vpc_id
-  subnet_ids = module.vpc.private_subnets
+  vpc_id      = module.vpc.vpc_id
+  subnet_ids  = module.vpc.public_subnets
 
   # kubectl で Kubernetes API サーバーと通信するため
   # ref: https://docs.aws.amazon.com/ja_jp/eks/latest/userguide/cluster-endpoint.html
