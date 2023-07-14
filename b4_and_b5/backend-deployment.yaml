@@ -11,10 +11,11 @@ spec:
     metadata:
       labels:
         app: backend 
+        tags.datadoghq.com/service: sre-onboarding-shinta-b7
     spec:
       containers:
       - name: backend 
-        image: ${BACKEND_REPO}:latest
+        image: ${AWS_ACCOUNT_ID}.dkr.ecr.ap-northeast-1.amazonaws.com/sre-onboarding-shinta-b4:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
